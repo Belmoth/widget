@@ -108,7 +108,7 @@
 
     _createDisc: function( obj ) {
       var filter, template, json, data, rendered;
-      obj.filter ? filter = 'filter' : filter = '';
+      filter = obj.filter ? 'filter': '';
 
       json = obj.json;
 
@@ -131,7 +131,7 @@
 
     _createReserv: function ( obj ) {
       var filter, template, json, data, rendered;
-      obj.filter ? filter = 'filter' : filter = '';
+      filter = obj.filter ? 'filter': '';
 
       json = obj.json;
       data = {
@@ -156,8 +156,7 @@
 
     _createDeliv: function ( obj ) {
       var filter, template, json, data, rendered;
-
-      obj.filter ? filter = 'filter' : filter = '';
+      filter = obj.filter ? 'filter': '';
 
       json = obj.json
 
@@ -188,7 +187,7 @@
       ,   rendered
       ,   dishes     = '';
 
-      obj.filter ? filter = 'filter' : filter = '';
+      filter = obj.filter ? 'filter': '';
       data = {
         filter:    filter,
         id:        json.id,
@@ -251,7 +250,7 @@
         'tab_orders'  : this._createOrder
       }
 
-      return tabFunctions[tabName].bind(this);
+      return tabFunctions[ tabName ].bind(this);
     },
 
     _showTabContent: function ( el ) {
