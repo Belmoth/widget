@@ -223,16 +223,13 @@
       $tabs.removeClass("admin-link-press");
       tab.classList.add("admin-link-press");
     },
+  
+    _findTab: function (tabName) {
+      var tabsName = this.options.tabs.map( function (tab) {
+        return tab.name;
+      });
 
-    _findTab: function ( tabName ) {
-      var tabs  = this.options.tabs
-      ,   count = tabs.length;
-
-      for (var i = 0; i < count; i++) {
-        if ( tabs[ i ].name === tabName ) return i;
-      }
-
-      return -1;
+      return tabsName.indexOf( tabName );
     },
 
     _getTabName: function ( tabName ) {
