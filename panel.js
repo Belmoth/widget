@@ -13,7 +13,6 @@
     },
 
     _getHeader: function () {
-      console.log(this.options.close);
       if ( this.options.close ) {
         return '<div id="admin-header">' + this.options.header + '<div id="admin-close">X</div></div><div id="admin-content">';
       } else {
@@ -112,7 +111,7 @@
       obj.filter ? filter = 'filter' : filter = '';
 
       json = obj.json;
-            console.log(json);
+
       data = {
         filter:    filter,
         id:        json.id,
@@ -362,7 +361,7 @@
           tab.data[ i ].filter ? rows += createRow({ json: tab.data[ i ], filter: true })
                                : rows += createRow({ json: tab.data[ i ] });
         }
-        console.log( rows );
+
         $content.append( rows );
         tab.cacheDOM = $(".rows", $content);
         tab.data = [];
@@ -418,7 +417,7 @@
     _findDataTabByAppNum: function (app_num) {
         var that = this;
         var tabs = this.options.tabs;
-        console.log( tabs );
+
         this.return = false;
 
         !this.app_num
