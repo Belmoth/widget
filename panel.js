@@ -106,8 +106,13 @@
       return body;
     },
 
+    _renderMustache: function ( templateName, data ) {
+      var template = $('#'+templateName).html();
+      return Mustache.render(template, data);
+    },
+
     _createDisc: function( obj ) {
-      var filter, template, json, data, rendered;
+      var filter, json, data;
       filter = obj.filter ? 'filter': '';
 
       json = obj.json;
@@ -122,15 +127,11 @@
         time_send: json.time_send
       };
 
-      template = $('#discounts').html();
-      Mustache.parse(template);
-
-      rendered = Mustache.render(template, data);
-      return rendered;
+      return this._renderMustache( 'discounts', data );
     },
 
     _createReserv: function ( obj ) {
-      var filter, template, json, data, rendered;
+      var filter, json, data;
       filter = obj.filter ? 'filter': '';
 
       json = obj.json;
@@ -147,15 +148,11 @@
         status:    json.status
       };
 
-      template = $('#reservation').html();
-      Mustache.parse(template);
-
-      rendered = Mustache.render(template, data);
-      return rendered;
+      return this._renderMustache( 'reservation', data ); 
     },
 
     _createDeliv: function ( obj ) {
-      var filter, template, json, data, rendered;
+      var filter, json, data;
       filter = obj.filter ? 'filter': '';
 
       json = obj.json
@@ -171,20 +168,14 @@
         status:    json.status,
         date:      json.date
       };
-
-      template = $('#delivery').html();
-      Mustache.parse(template);
-
-      rendered = Mustache.render(template, data);
-      return rendered;
+      
+      return this._renderMustache( 'delivery', data );
     },
 
     _createOrder: function ( obj ) {
       var filter
       ,   json       = obj.json
       ,   data
-      ,   template
-      ,   rendered
       ,   dishes     = '';
 
       filter = obj.filter ? 'filter': '';
@@ -199,11 +190,7 @@
         address:   json.address
       };
 
-      template = $('#order').html();
-      Mustache.parse(template);
-
-      rendered = Mustache.render(template, data);
-      return rendered;
+      return this._renderMustache( 'order', data );
     },
 
     _resetClicked: function () {
