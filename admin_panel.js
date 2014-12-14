@@ -1,13 +1,6 @@
 var Admin_panel = (function () {
-  var init = false;
 
   var open = function ( json ) {
-    if ( init ) {
-      $("#admin").panel('getData');
-      $("#admin").show();
-      return;
-    }
-
     $( "#admin").panel(
       {
         header: 'Панель администратора',
@@ -50,8 +43,8 @@ var Admin_panel = (function () {
       }
     );
 
+    $("#admin").panel('getData');
     $("#admin").show();
-    init = true;
   };
 
   return {
