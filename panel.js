@@ -62,13 +62,13 @@
 
       li = ''; 
       for ( var j = 0; j < len; j++ ) {
-        k  = j  + 1; //избавиться от этого. Изменить стили...
+        k  = j  + 1;
 
         if ( items[ j ] === keyField ) {
-          li = li + '<li class="item item-' + k + '">' + items[ j ] + 
+          li = li + '<li class="item item-' + (j+1) + '">' + items[ j ] + 
                     '<p class="key_field">key field for filter</p></li>';
         } else {
-          li = li + '<li class="item item-' + k + '">' + items[ j ] + '</li>';
+          li = li + '<li class="item item-' + (j+1) + '">' + items[ j ] + '</li>';
         }
       }
 
