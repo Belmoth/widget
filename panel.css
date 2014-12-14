@@ -1,0 +1,202 @@
+  #admin {
+    background: #fff;
+    min-width: 900px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 45px;
+    border-radius: 4px;
+  }
+
+  #admin-header {
+    background-color: #2c5b73;
+    color: #fff;
+    width: 100%;
+    height: 31px;
+    text-align: center;
+    font: bold 14pt/1.5 "Open Sans";
+    padding: 7px 0;
+  }
+
+  #admin-close {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    cursor: pointer;
+    width: 10px;
+    height: 10px;
+  }
+
+  .tab_block_content {
+    height: 470px;
+    float: left;
+    clear: left;
+  }
+
+  .tab_block_container {
+    overflow: auto;
+  }
+
+  .tab_block_menu {
+    height: 40px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #2c5b73;
+    float: left;
+    display: inline-flex;
+  }
+
+  .tab_block { 
+    display: none; 
+    overflow-y: hidden;
+    white-space: nowrap;
+    word-wrap: normal;
+  }
+  
+  .tab_block.tab_discount { display: block; }
+
+  .item,
+  .rows > div {
+    float: left;
+    padding-top: 10px;
+    height: 30px;
+    text-align: center;
+    border-right: 1px solid #2c5b73;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .item {
+    font: 700 10pt "Open Sans";
+    color: #2c5b73;
+  }
+
+  .rows {
+    border-style: solid;
+    border-color: #2c5b73;
+    border-width: 0 0 1px 1px;
+    height: 40px;
+    position: relative;
+    padding: 0;
+    display: flex;
+    float: left;
+    font: normal 10pt "Open Sans";
+    color: #000;
+  }
+
+  .item:first-child {
+    border-left: none;
+  }
+
+  .rows .item-1 {
+    margin-left: 0;
+  }
+
+  .item-1, .item-2, .item-3, .item-4,
+  .item-5, .item-6, .item-7, .item-8,
+  .item-9, .item-10, .item-11, .item-12 {
+    width: 178px;
+  }
+
+  .item-1:after, .item-2:after, .item-3:after,
+  .item-4:after, .item-5:after, .item-6:after,
+  .item-7:after, .item-8:after, .item-9:after {
+    content: attr(data-text);
+    margin-left: 5px;
+  }
+  
+  .item-3:before, .item-4:before,
+  .item-7:before, .item-8:before{
+    content: attr(data-text);
+    position: absolute;
+    top: -35px;
+    background-color: #426c81;
+    border-radius: 3px;
+    visibility: hidden;
+    color: #fff;
+    padding: 10px;
+    z-index: 2000;
+    -webkit-transition: opacity 0.7s;
+    opacity: 0;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    height: auto;
+  }
+
+  .item-3:before { width: 120px; left: 377px;  }
+  .item-4:before { width: 120px; left: 556px;  }
+  .item-7:before { width: 120px; left: 1094px; }
+  .item-8:before { width: 93px;  left: 1285px; }
+
+  .item-3:hover:before,
+  .item-4:hover:before,
+  .item-7:hover:before,
+  .item-8:hover:before {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .tab_block_menu .item:last-child { width: 182px; }
+
+  .rows div:last-child { width: 182px; }
+
+  .rouble {
+    font: bold 20px "ALSRublRegular", serif;
+    position: relative;
+    left: 74px;
+    top: 6px;
+    color: #426c81;
+  }
+
+  .admin-menu {
+    overflow: hidden;
+    width: 100%;
+    background-color: #3F718B;
+  }
+
+  .admin-menu_link {
+    float: left;  
+    background-color: #3F718B;  
+    padding: 10px 20px;
+    color: white;
+  }
+
+  .admin-menu_link:hover  { background-color: #325D74; cursor: pointer; }
+  .admin-menu_link:active { background-color: #234252; }
+  .admin-link-press       { background-color: #234252; }
+  .admin-link-press:hover { background-color: #234252; }
+
+  .tab_block_container { min-height: 500px; }
+
+  .el_count {
+    font-size: 9pt;
+    position: relative;
+    top: -8px;
+    left: 2px;
+  }
+
+  .key_field {
+    font-size: 7pt;
+    margin: -3px 0 0 -2px;
+  }
+
+ .rows {
+    display: flex;
+    border-color: #2c5b73;
+    border-width: 0 0 1px 1px;
+    height: 40px;
+    position: relative;
+    padding: 0;
+    font: normal 10pt "Open Sans";
+    color: #000;
+    float: left;
+  }
+
+  .item:first-child { border-left: none; }
+
+  .rows:hover {
+    background-color: #D6DDF6;
+    cursor: pointer;
+  }
+
+  .rows.filter  { background-color: #87A1FA; }

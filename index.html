@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Панель администирования</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <div id="admin"></div>
+  
+  <script src="jquery-2.1.1.min.js"></script>
+  <script src="jquery-ui-widget.min.js"></script>
+  <script src="mustache.js"></script>
+  <script src="panel.js"></script>
+  <script src="admin_panel.js"></script>
+  <script>
+   $(function () {
+    var json = {
+      rowsCount: [ 1, 3, 2, 7 ], 
+      table_data: [
+        {id: "1", hash: "1ff41d7", app_num: "777", discount_num: "1", app_tel: "9043852547", time_send: "14.12.14"},
+        {id: "2", hash: "1ff41d7", app_num: "9472116847971222", discount_num: "1", app_tel: "9043852547", order_num: "644", date: "11.11.1909", address: "Оренбург", status: "1", phone: "66666666", comment: "Комментарий 0" },
+        {id: "3", hash: "1ff41d7", app_num: "9472116847971058", discount_num: "1", app_tel: "9043852547", order_num: "644", date: "11.11.1909", address: "Оренбург", status: "1", phone: "66666666", comment: "Комментарий 21" },
+        {id: "4", hash: "1ff41d7", app_num: "9472116847971058", discount_num: "1", app_tel: "9043852547", order_num: "644", date: "11.11.1909", address: "Оренбург", status: "1", phone: "66666666", comment: "Комментарий 0" },
+        {id: "5", hash: "1ff41d7", app_num: "9472116847971222", order_num: "123", date: "11.12.14", name: "sasha", people: "2", comment: "комментарий 1", address: "Оренбург", status: "1", discount_num: "1", app_tel: "9043852547"},
+        {id: "6", hash: "1ff41d7", address: "Тюмень", status: "0", app_num: "9472116847971058", order_num: "123", date: "11.12.14", name: "sasha", people: "1", comment: "комментарий 2", discount_num: "1", app_tel: "9043852547"},
+        {id: "7", hash: "1ff41d7", app_num: "9472116847971222", discount_num: "1", app_tel: "9043852547"},
+        {id: "8", hash: "1ff41d7", app_num: "777", discount_num: "1", app_tel: "9043852547"},
+        {id: "9", hash: "1ff41d7", app_num: "9472116847971222", discount_num: "1", app_tel: "9043852547"},
+        {id: "10", hash: "1ff41d7", app_num: "9472116847971058", discount_num: "1", app_tel: "9043852547"},
+        {id: "11", hash: "1ff41d7", app_num: "9472116847971222", discount_num: "1", app_tel: "9043852547"},
+        {id: "12", hash: "1ff41d7", app_num: "9472116847971058", discount_num: "1", app_tel: "9043852547"},
+        {id: "13", hash: "1ff41d7", app_num: "9472116847971058", discount_num: "1", app_tel: "9043852547"}
+      ]
+    };
+
+    Admin_panel.open( json );
+  });
+  </script>
+
+  <script id="discounts" type="x-tmpl-mustache">
+    <div class='rows {{filter}}'>
+      <div class='item-1'         data-text='{{id}}'></div>
+      <div class='item-2 app_num' data-text='{{app_num}}'></div>
+      <div class='item-3'         data-text='{{hash}}'></div>
+      <div class='item-4'         data-text='{{disc}}'></div>
+      <div class='item-5'         data-text='{{tel}}'></div>
+      <div class='item-6'         data-text='{{time_send}}'></div>
+    </div>
+  </script>
+
+  <script id="reservation" type="x-tmpl-mustache">
+    <div class='rows {{filter}}'>
+      <div class='item-1'         data-text='{{id}}'></div>
+      <div class='item-2 app_num' data-text='{{app_num}}'></div>
+      <div class='item-3'         data-text='{{order_num}}'></div>
+      <div class='item-4'         data-text='{{date}}'></div>
+      <div class='item-5'         data-text='{{name}}'></div>
+      <div class='item-6'         data-text='{{people}}'></div>
+      <div class='item-7'         data-text='{{comment}}'></div>
+      <div class='item-8'         data-text='{{address}}'></div>
+      <div class='item-9'         data-text='{{status}}'></div>
+    </div>
+  </script>
+
+  <script id="delivery" type="x-tmpl-mustache">
+    <div class='rows {{filter}}'>
+      <div class='item-1'         data-text='{{id}}'></div>
+      <div class='item-2 app_num' data-text='{{app_num}}'></div>
+      <div class='item-3'         data-text='{{order_num}}'></div>
+      <div class='item-4'         data-text='{{address}}'></div>
+      <div class='item-5'         data-text='{{comment}}'></div>
+      <div class='item-6'         data-text='{{phone}}'></div>
+      <div class='item-7'         data-text='{{status}}'></div>
+      <div class='item-8'         data-text='{{date}}'></div>
+    </div>
+  </script>
+
+  <script id="order" type="x-tmpl-mustache">
+    <div class='rows {{filter}}'>
+      <div class='item-1'         data-text='{{id}}'></div>
+      <div class='item-2 app_num' data-text='{{app_num}}'></div>
+      <div class='item-3'         data-text='{{order_num}}'></div>
+      <div class='item-4'         data-text='{{dishes}}'></div>
+      <div class='item-5'         data-text='{{count}}'></div>
+      <div class='item-6'         data-text='{{price}}'></div>
+      <div class='item-7'         data-text='{{address}}'></div>
+    </div>
+  </script>
+</body>
+</html>
