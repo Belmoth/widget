@@ -477,7 +477,6 @@
 
         $admin_close.on('click', function () {
           that._reset();
-          Dark.hide();
           $("#admin").hide();
         })
       }

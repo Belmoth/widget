@@ -8,6 +8,7 @@
   }
 
   #admin-header {
+    position: relative;
     background-color: #2c5b73;
     color: #fff;
     width: 100%;
@@ -20,7 +21,7 @@
   #admin-close {
     position: absolute;
     right: 10px;
-    top: 9px;
+    top: 0px;
     cursor: pointer;
     width: 10px;
     height: 10px;
