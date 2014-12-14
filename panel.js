@@ -244,19 +244,14 @@
     },
 
     _getCreateFunction: function ( tabName ) {
-      var that = this;
-      switch ( tabName ) {
-        case "tab_appstore": return function ( obj ) { 
-          return that._createUser  ( obj ); }; break;
-        case "tab_discount": return function ( obj ) { 
-          return that._createDisc  ( obj ); }; break;
-        case "tab_reservat": return function ( obj ) { 
-          return that._createReserv( obj ); }; break;
-        case "tab_delivery": return function ( obj ) { 
-          return that._createDeliv ( obj ); }; break;
-        case "tab_orders":   return function ( obj ) { 
-          return that._createOrder ( obj ); }; break;
+      var tabFunctions = {
+        'tab_discount': this._createDisc,
+        'tab_reservat': this._createReserv,
+        'tab_delivery': this._createReserv,
+        'tab_orders'  : this._createOrder
       }
+
+      return tabFunctions[tabName].bind(this);
     },
 
     _showTabContent: function ( el ) {
