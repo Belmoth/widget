@@ -43,7 +43,6 @@ var Admin_panel = (function () {
       }
     );
 
-    $("#admin").panel('getData');
     $("#admin").show();
   };
 
